@@ -1,0 +1,25 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: aws-python-samples
+  description: AWS Python code samples and best practices
+  tags:
+    - aws
+    - python
+    - samples
+    - boto3
+  annotations:
+    github.com/project-slug: backstage-beach/aws-python-samples
+    backstage.io/techdocs-ref: dir:.
+  links:
+    - url: https://github.com/backstage-beach/aws-python-samples
+      title: GitHub Repository
+      icon: github
+    - url: https://boto3.amazonaws.com/v1/documentation/api/latest/index.html
+      title: Boto3 Documentation
+      icon: docs
+spec:
+  type: library
+  lifecycle: experimental
+  owner: platform-team
+  system: backstage-beach-portal
