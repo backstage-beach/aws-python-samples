@@ -2,10 +2,11 @@
 replicaCount: 1
 
 image:
-  repository: python-app
+  # AWS ECR repository for python-app
+  repository: 160071257600.dkr.ecr.sa-east-1.amazonaws.com/backstage-lab/backstage
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "python-app-latest"
 
 imagePullSecrets: []
 nameOverride: ""
