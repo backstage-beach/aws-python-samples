@@ -43,11 +43,19 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{- end }}
 
 {{/*
-Selector labels
+Selector labels - IMPORTANT: These are immutable once deployed!
+Do NOT add new labels here for existing deployments.
 */}}
 {{- define "python-app.selectorLabels" -}}
 app.kubernetes.io/name: {{ include "python-app.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
+{{- end }}
+
+{{/*
+Pod labels - includes selector labels plus additional labels for discovery
+*/}}
+{{- define "python-app.podLabels" -}}
+{{ include "python-app.selectorLabels" . }}
 backstage.io/kubernetes-id: python-app
 {{- end }}
 
