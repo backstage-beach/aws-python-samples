@@ -11,6 +11,9 @@ metadata:
   annotations:
     github.com/project-slug: backstage-beach/aws-python-samples
     backstage.io/techdocs-ref: dir:.
+    # Kubernetes plugin annotations - enables viewing K8s resources in Backstage
+    backstage.io/kubernetes-id: python-app
+    backstage.io/kubernetes-namespace: default
   links:
     - url: https://github.com/backstage-beach/aws-python-samples
       title: GitHub Repository

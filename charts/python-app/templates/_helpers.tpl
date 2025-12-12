@@ -48,6 +48,7 @@ Selector labels
 {{- define "python-app.selectorLabels" -}}
 app.kubernetes.io/name: {{ include "python-app.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
+backstage.io/kubernetes-id: python-app
 {{- end }}
 
 {{/*
