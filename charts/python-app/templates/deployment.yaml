@@ -2,6 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ include "python-app.fullname" . }}
+  annotations:
+    # Force replace instead of patch when selector labels change (immutable field)
+    argocd.argoproj.io/sync-options: Replace=true
   labels:
     {{- include "python-app.labels" . | nindent 4 }}
 spec:
